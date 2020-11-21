@@ -8,9 +8,9 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Point[] pointsArray = new Point[10];
+        Point[] pointsArray = new Point[2];
 
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < pointsArray.length; i++){
             System.out.println("Введите координаты " + (i+1) + "-й точки в формате: x,y (через запятую без пробела)");
             String coordinatesOfPoint = br.readLine();
             String[] coordinates =coordinatesOfPoint.split(",");
@@ -20,11 +20,14 @@ public class Main {
         System.out.println("Введите данные круга -" +
                 " координаты центра и радиус в формате: x,y,radius (через запятую без пробела)");
         String coordinatesOfCircle = br.readLine();
-
-        String coordinatesOfPoint = br.readLine();
-        String[] coordinates =coordinatesOfPoint.split(",");
+        String[] coordinates = coordinatesOfCircle.split(",");
         Circle circle = new Circle(new Point(Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1])), Integer.parseInt(coordinates[2]));
 
+        for(Point point: pointsArray){
+            if(circle.isPointInTheCircle(point)){
+                System.out.println("Точка " + point + " принадлежит кругу " + circle);
+            }
+        }
 
     }
 

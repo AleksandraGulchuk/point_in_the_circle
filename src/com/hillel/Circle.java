@@ -22,11 +22,11 @@ public class Circle {
                 Math.pow(point.getX() - centre.getX(), 2.0)
                         + Math.pow(point.getY() - centre.getY(), 2.0)
                 ); //d = корень((x1-x2)^2 + (y1-y2)^2)
-        if(distance < this.radius)
-            return true;
-        else return false;
+        return distance <= this.radius;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Circle{ " + "centre in " + centre + ", radius = " + radius + " }";
+    }
 }
