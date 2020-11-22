@@ -17,11 +17,7 @@ public class Circle {
         return radius;
     }
 
-    public boolean isPointInTheCircle(Point point) {
-        double distance = Math.sqrt(
-                Math.pow(point.getX() - centre.getX(), 2.0)
-                        + Math.pow(point.getY() - centre.getY(), 2.0)
-        );
+    public boolean isContainPoint(double distance) {
         return distance <= this.radius;
     }
 

@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class WorkerWithUser {
 
     private final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    private final int quantity = 10;
+    private final int quantity = 2;
 
     public Point[] takePointsArray() throws IOException {
         Point[] pointsArray = new Point[quantity];
@@ -31,7 +31,7 @@ public class WorkerWithUser {
 
     public void checkPointsInTheCircle(Point[] pointsArray, Circle circle) {
         for (Point point : pointsArray) {
-            if (circle.isPointInTheCircle(point)) {
+            if (circle.isContainPoint(point.calculateDistanceTo(point, circle.getCentre()))) {
                 System.out.println("Точка " + point + " принадлежит кругу " + circle);
             }
         }
