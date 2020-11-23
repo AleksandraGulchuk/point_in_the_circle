@@ -7,10 +7,10 @@ import java.io.InputStreamReader;
 public class WorkerWithUser {
 
     private final BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    private final int quantity = 2;
+    private final int amount = 10;
 
     public Point[] takePointsArray() throws IOException {
-        Point[] pointsArray = new Point[quantity];
+        Point[] pointsArray = new Point[amount];
         for (int i = 0; i < pointsArray.length; i++) {
             System.out.println("Введите координаты " + (i + 1) + "-й точки в формате: x,y (через запятую без пробела)");
             String coordinatesOfPoint = br.readLine();
